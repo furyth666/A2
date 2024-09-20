@@ -1,0 +1,65 @@
+﻿@model IEnumerable<A2.Models.Game>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Games List";
+}
+
+@section Styles {
+    <link href="~/Content/game-list.css" rel="stylesheet" />
+    <style>
+        .rating-stars {
+            color: gold;
+            font-size: 20px;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script src="~/Scripts/ratings.js"></script>
+    @Scripts.Render("~/bundles/jquery") // Ensure jQuery is included before your script if it uses jQuery
+}
+
+
+<h2>Games List</h2>
+
+@using (Html.BeginForm("Index", "Games", FormMethod.Get))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Poster</th>
+                <th>@Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm })</th>
+                <th>
+                    Game Type
+                    @Html.DropDownList("gameType", (SelectList)ViewBag.GameTypeFilter, "All", new { onchange = "this.form.submit();" })
+                </th>
+                <th>
+                    Developer
+                    @Html.DropDownList("developer", (SelectList)ViewBag.DeveloperFilter, "All", new { onchange = "this.form.submit();" })
+                </th>
+                <th>@Html.ActionLink("Rating", "Index", new { sortOrder = ViewBag.RatingSortParm })</th>
+                <th>@Html.ActionLink("Release Date", "Index", new { sortOrder = ViewBag.DateSortParm })</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@Url.Content(item.PosterPath)" alt="Game Poster" style="width: 100px; height: auto;">
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.GameType.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Developer)</td>
+                    <td class="rating">@item.Rating</td>
+                    <td>@item.ReleaseDate.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

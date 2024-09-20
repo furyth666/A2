@@ -13,7 +13,7 @@ namespace A2.Data
         public GameDbContext() : base("name=GameDbContext") { }
 
         public DbSet<Game> Games { get; set; }
-        public DbSet<Review> Reviews { get; set; }
+        public DbSet<GameType> GameTypes { get; set; }
 
 
     }

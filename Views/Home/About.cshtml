@@ -1,9 +1,22 @@
 ﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "About";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+@section Styles {
+    <link href="~/Content/about-contact.css" rel="stylesheet" />
+}
 
-    <p>Use this area to provide additional information.</p>
-</main>
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information about your company or application. Here are a few things you might include:</p>
+
+<ul>
+    <li>The purpose of your application</li>
+    <li>History of your company or project</li>
+    <li>Contact information</li>
+    <li>Links to social media profiles</li>
+    <li>A team photo or office photo</li>
+    <li>Any other relevant information about your company or services</li>
+</ul>

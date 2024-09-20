@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\GameDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -136,31 +137,35 @@
     <Compile Include="Migrations\202409201557442_InitialCreate.Designer.cs">
       <DependentUpon>202409201557442_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202409201734290_AddPosterPath.cs" />
+    <Compile Include="Migrations\202409201734290_AddPosterPath.Designer.cs">
+      <DependentUpon>202409201734290_AddPosterPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202409201754454_AddDeveloperToGame.cs" />
+    <Compile Include="Migrations\202409201754454_AddDeveloperToGame.Designer.cs">
+      <DependentUpon>202409201754454_AddDeveloperToGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202409201804342_UpdateGameWithGameType.cs" />
+    <Compile Include="Migrations\202409201804342_UpdateGameWithGameType.Designer.cs">
+      <DependentUpon>202409201804342_UpdateGameWithGameType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Game.cs" />
-    <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\GameType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-grid.rtl.css" />
-    <Content Include="Content\bootstrap-grid.rtl.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap-reboot.rtl.css" />
-    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
-    <Content Include="Content\bootstrap-utilities.css" />
-    <Content Include="Content\bootstrap-utilities.min.css" />
-    <Content Include="Content\bootstrap-utilities.rtl.css" />
-    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.rtl.css" />
-    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\about-contact.css" />
+    <Content Include="Content\game-details.css" />
+    <Content Include="Content\game-list.css" />
+    <Content Include="Content\home.css" />
+    <Content Include="Content\Images\Black_Myth_Wukong_cover_art.jpg" />
+    <Content Include="Content\Images\Dark_souls_3_cover_art.jpg" />
+    <Content Include="Content\Images\Death_Stranding.jpg" />
+    <Content Include="Content\Images\EldenRing.jpg" />
+    <Content Include="Content\Images\Sekiro_art.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -178,6 +183,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ratings.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -192,27 +198,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Games\Details.cshtml" />
+    <Content Include="Views\Games\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.rtl.min.css.map" />
-    <Content Include="Content\bootstrap.rtl.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
-    <Content Include="Content\bootstrap-utilities.min.css.map" />
-    <Content Include="Content\bootstrap-utilities.css.map" />
-    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-grid.rtl.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -226,6 +218,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202409201557442_InitialCreate.resx">
       <DependentUpon>202409201557442_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409201734290_AddPosterPath.resx">
+      <DependentUpon>202409201734290_AddPosterPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409201754454_AddDeveloperToGame.resx">
+      <DependentUpon>202409201754454_AddDeveloperToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409201804342_UpdateGameWithGameType.resx">
+      <DependentUpon>202409201804342_UpdateGameWithGameType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

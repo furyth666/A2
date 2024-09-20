@@ -14,12 +14,24 @@ namespace A2.Models
         [StringLength(100)]
         public string Title { get; set; }
 
+
+        [Required]
+        public float Rating { get; set; }
+
         public string Description { get; set; }
+
+        [Required]
+        [Display(Name = "Poster Image")]
+        public string PosterPath { get; set; }
+
+        public string Developer { get; set; }
+
 
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
-        // Relationship: A game can have many reviews
-        public virtual ICollection<Review> Reviews { get; set; }
+        // New reference to GameType
+        public int GameTypeId { get; set; } // Foreign key
+        public virtual GameType GameType { get; set; } // Navigation property
     }
 }

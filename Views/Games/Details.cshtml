@@ -1,0 +1,56 @@
+﻿@model A2.Models.Game
+
+@{
+    ViewBag.Title = "Details - " + Model.Title; // Dynamic title based on the game's name
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link href="~/Content/game-details.css" rel="stylesheet" />
+}
+
+<h2>@Html.DisplayFor(model => model.Title)</h2> <!-- Game's name as the main heading -->
+
+<div class="details-container">
+    <!-- Image, Rating, Release Date, Type, and Developer Container -->
+    <div class="image-container">
+        @if (!string.IsNullOrEmpty(Model.PosterPath))
+        {
+            <img src="@Url.Content(Model.PosterPath)" alt="@Model.Title" class="game-image" />
+        }
+        else
+        {
+            <p>No image available.</p>
+        }
+        <div class="game-details">
+            <div class="game-rating">
+                <strong>Rating:</strong> @Html.DisplayFor(model => model.Rating)
+            </div>
+            <div class="game-release-date">
+                <strong>Release Date:</strong> @Html.DisplayFor(model => model.ReleaseDate)
+            </div>
+            <div class="game-type">
+                <strong>Type:</strong> @Html.DisplayFor(model => model.GameType.Name) <!-- Assuming GameType is correctly linked -->
+            </div>
+            <div class="game-developer">
+                <strong>Developer:</strong> @Html.DisplayFor(model => model.Developer)
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Details Info Container -->
+    <div class="details-info">
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.Description)</dt>
+            <dd>@Html.DisplayFor(model => model.Description)</dd>
+        </dl>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index", "Games", null, new { @class = "btn btn-default" }) <!-- Ensure correct routing to the game list -->
+</p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

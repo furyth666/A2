@@ -1,19 +1,29 @@
 ﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Contact";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+
+@section Styles {
+    <link href="~/Content/about-contact.css" rel="stylesheet" />
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div>
+    <h4>Our Contact Information</h4>
+    <p>If you have any questions, please feel free to reach out to us:</p>
 
     <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
+        <strong>Example Company, Inc.</strong><br>
+        1234 Street Rd.<br>
+        Suite 1234<br>
+        City, State, 12345<br>
+        <abbr title="Phone">P:</abbr> (123) 456-7890
     </address>
 
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        <strong>Email</strong><br>
+        <a href="mailto:#">contact@example.com</a>
     </address>
-</main>
+</div>
