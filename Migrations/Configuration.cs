@@ -1,4 +1,4 @@
-﻿namespace A2.Migrations
+namespace A2.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -10,6 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(A2.Data.GameDbContext context)

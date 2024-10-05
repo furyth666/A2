@@ -13,31 +13,33 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false, maxLength: 100),
+                        Rating = c.Single(nullable: false),
                         Description = c.String(),
+                        PosterPath = c.String(nullable: false),
+                        Developer = c.String(),
                         ReleaseDate = c.DateTime(nullable: false),
+                        GameTypeId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.GameTypes", t => t.GameTypeId, cascadeDelete: true)
+                .Index(t => t.GameTypeId);
             
             CreateTable(
-                "dbo.Reviews",
+                "dbo.GameTypes",
                 c => new
                     {
-                        ReviewId = c.Int(nullable: false, identity: true),
-                        Content = c.String(nullable: false, maxLength: 500),
-                        Rating = c.Int(nullable: false),
-                        GameId = c.Int(nullable: false),
+                        GameTypeId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                     })
-                .PrimaryKey(t => t.ReviewId)
-                .ForeignKey("dbo.Games", t => t.GameId, cascadeDelete: true)
-                .Index(t => t.GameId);
+                .PrimaryKey(t => t.GameTypeId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Reviews", "GameId", "dbo.Games");
-            DropIndex("dbo.Reviews", new[] { "GameId" });
-            DropTable("dbo.Reviews");
+            DropForeignKey("dbo.Games", "GameTypeId", "dbo.GameTypes");
+            DropIndex("dbo.Games", new[] { "GameTypeId" });
+            DropTable("dbo.GameTypes");
             DropTable("dbo.Games");
         }
     }

@@ -133,21 +133,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202409201557442_InitialCreate.cs" />
-    <Compile Include="Migrations\202409201557442_InitialCreate.Designer.cs">
-      <DependentUpon>202409201557442_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202409201734290_AddPosterPath.cs" />
-    <Compile Include="Migrations\202409201734290_AddPosterPath.Designer.cs">
-      <DependentUpon>202409201734290_AddPosterPath.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202409201754454_AddDeveloperToGame.cs" />
-    <Compile Include="Migrations\202409201754454_AddDeveloperToGame.Designer.cs">
-      <DependentUpon>202409201754454_AddDeveloperToGame.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202409201804342_UpdateGameWithGameType.cs" />
-    <Compile Include="Migrations\202409201804342_UpdateGameWithGameType.Designer.cs">
-      <DependentUpon>202409201804342_UpdateGameWithGameType.cs</DependentUpon>
+    <Compile Include="Migrations\202410041607515_InitialCreate.cs" />
+    <Compile Include="Migrations\202410041607515_InitialCreate.Designer.cs">
+      <DependentUpon>202410041607515_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Game.cs" />
@@ -159,11 +147,11 @@
     <Content Include="Content\game-details.css" />
     <Content Include="Content\game-list.css" />
     <Content Include="Content\home.css" />
-    <Content Include="Content\Images\Black_Myth_Wukong_cover_art.jpg" />
-    <Content Include="Content\Images\Dark_souls_3_cover_art.jpg" />
-    <Content Include="Content\Images\Death_Stranding.jpg" />
-    <Content Include="Content\Images\EldenRing.jpg" />
-    <Content Include="Content\Images\Sekiro_art.jpg" />
+    <Content Include="Content\Images\1.jpg" />
+    <Content Include="Content\Images\2.jpg" />
+    <Content Include="Content\Images\3.jpg" />
+    <Content Include="Content\Images\4.jpg" />
+    <Content Include="Content\Images\5.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -216,17 +204,8 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202409201557442_InitialCreate.resx">
-      <DependentUpon>202409201557442_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202409201734290_AddPosterPath.resx">
-      <DependentUpon>202409201734290_AddPosterPath.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202409201754454_AddDeveloperToGame.resx">
-      <DependentUpon>202409201754454_AddDeveloperToGame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202409201804342_UpdateGameWithGameType.resx">
-      <DependentUpon>202409201804342_UpdateGameWithGameType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410041607515_InitialCreate.resx">
+      <DependentUpon>202410041607515_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

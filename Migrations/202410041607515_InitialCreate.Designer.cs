@@ -7,13 +7,13 @@ namespace A2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class UpdateGameWithGameType : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateGameWithGameType));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202409201804342_UpdateGameWithGameType"; }
+            get { return "202410041607515_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

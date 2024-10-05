@@ -10,7 +10,9 @@ namespace A2.Data
 {
     public class GameDbContext : DbContext
     {
-        public GameDbContext() : base("name=GameDbContext") { }
+        public GameDbContext() : base("name=GameDbContext") {
+            this.Database.Log = Console.Write;
+        }
 
         public DbSet<Game> Games { get; set; }
         public DbSet<GameType> GameTypes { get; set; }
